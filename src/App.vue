@@ -350,7 +350,7 @@ const metricsList = [
   { key: 'progress', label: '推进约会潜力 (Progress)' }
 ];
 
-const aiScores = ref<{ closeness: number; balance: number; subtext: number; risk: number; progress: number; } | null>(null);
+const aiScores = ref<Record<string, number> | null>(null);
 
 const styleOptions = [
   { label: '情感亲密度评估 (分析词汇温差/判定双方实际情感黏度深度)', value: '情感亲密度评估' },
@@ -368,7 +368,7 @@ interface HistoryItem {
   userRoles: string;
   input: string;
   styleLabel: string;
-  aiScores: { closeness: number; balance: number; subtext: number; risk: number; progress: number; } | null;
+  aiScores: Record<string, number> | null;
   output: string;
 }
 
